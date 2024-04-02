@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product_所有商品</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycolor.css">
+</head>
+
+<body>
+    <div class="header mx-5 p-3">
+        <div class="fs-1 text-center fw_900 text-bg-success mt-3 py-3">台北OK認證旅館</div>
+    </div>
+    <div class="container">
+        <div class="row" style="height: 80vh;">
+            <div class="col-md-3 bg-info py-3">
+                <ul class="list-group" id="product">
+                    <li class="list-group-item" id="product_all">
+                        <div class="d-flex">
+                            <h5>所有商品</h5>
+                            <span class="badge text-bg-warning ms-auto">99</span>
+                            <!-- badge: 添加了徽章的一般樣式 -->
+                        </div>
+                    </li>
+                    <!--
+                        <li class="list-group-item">
+                            <div class="d-flex">
+                                <h5>台北市中正區</h5>
+                                <span class="badge text-bg-warning ms-auto">99</span>
+                            </div>
+                        </li> 
+                    -->
+                </ul>
+            </div>
+
+            <div class="col-md-9 bg-secondary p-3">
+                <div class="row p-3" id="Pdetail">
+                    <div class="col-md-4 p-3 border border-3 shadow shadow-lg rounded rounded-5 m-5">
+                        <!-- 商品名稱 -->
+                        <h4 class="fw-900">名偵探皮卡丘</h4>
+                        <!-- 商品價格 -->
+                        <h5 class="fw-900">定價: </h5>
+                        <!-- 商品樣式 -->
+                        <h5 class="fw-900">商品規格: </h5>
+                        <!-- 商品數量 -->
+                        <button class="btn btn-primary">google map</button><!-- button如果要有超連結效果，要包在<a href></a>裡面 -->
+                        <!-- 商品圖片 -->
+                        <p></p>
+                        <!-- 商品說明 -->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        // 先分配3個陣列
+        var regionTitle = [];////分區名稱
+        // var regionTitle= new Array(); 
+        var counter = []; //分區編號
+        var regionData = [];//分區旅館資料
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "20240222_hoteldata_api.php",
+                dataType: "json",
+                async: false,//因為網頁會先監聽再渲染，先把非同步關掉
+                success: showdata,
+                error: function () {
+                    alert("error:20240222_hoteldata_api.php");
+                }
+            });
+
+            //監聽 #myregion(前面有id的話也要寫，所以加#mylist)
+            $("#mylist #myregion").click(function () {
+                console.log($(this).data("key"));
+                drawRegionHotel($(this).data("key"));//下面列出詳細資料的方法
+            });//分號;在javascipt可加可不加
+        });
+
+        function showdata(data) {
+            //印出整體資料
+            console.log(data);
+
+            //印出第一筆資料的display_addr
+            console.log(data.data[0].display_addr);
+
+            //indexOf("區",0) 取得'區'的位置編號
+            console.log(data.data[0].display_addr.indexOf("區", 0));//.indexOf()用來找字串內容(第幾字)；前為找"區"字，後為第0位(第1字)開始找
+
+            //印出印出第一筆資料display_addr的第0~5位
+            console.log(data.data[0].display_addr.substring(0, data.data[0].display_addr.indexOf("區", 0) + 1));//substring(0,n) 從第0筆開始抓取n筆字串
+
+            data.data.forEach(function (item, key) {
+
+                //印出key值相對應的display_addr資料
+                console.log(key + " : " + item.display_addr.substring(0, data.data[0].display_addr.indexOf("區", 0) + 1));
+
+                var getRegion = item.display_addr.substring(0, item.display_addr.indexOf("區", 0) + 1);
+
+                if (getRegion == "") {
+                    getRegion = "未分類";
+                }
+
+                if (counter[getRegion] == undefined) {//如果counter無法定義(沒資料)
+
+                    //紀錄分區編號
+                    counter[getRegion] = regionData.length;//已有幾筆分區資料計算.length(看20240222上課整理)
+
+                    //新增一筆空紀錄
+                    regionData.push(new Array());//regionData新增陣列
+
+                    //紀錄分區名稱
+                    regionTitle[counter[getRegion]] = getRegion;
+                }
+                //將整筆資料存入
+                regionData[counter[getRegion]].push(item);
+
+                //找出前20(key=0~19)筆display_addr資料
+                /*
+                if (key < 20) {
+
+                    var getRegion = item.display_addr.substring(0, item.display_addr.indexOf("區", 0) + 1);
+
+                    if (getRegion == "") {
+                        getRegion = "未分類";
+                    }
+
+                    if (counter[getRegion] == undefined) {//如果counter無法定義(沒資料)
+
+                        //紀錄分區編號
+                        counter[getRegion] = regionData.length;//已有幾筆分區資料計算.length(看20240222上課整理)
+
+                        //新增一筆空紀錄
+                        regionData.push(new Array());//regionData新增陣列
+
+                        //紀錄分區名稱
+                        regionTitle[counter[getRegion]] = getRegion;
+                    }
+                    //將整筆資料存入
+                    regionData[counter[getRegion]].push(item);
+                }
+                */
+            });
+            console.log(regionTitle);
+            console.log(counter);
+            console.log(regionData);
+
+            //渲染左側選單
+            $("#mylist").empty();
+
+            for (var i = 0; i < regionTitle.length; i++) {
+                var strHTML = '<li class="list-group-item" data-key="' + i + '" id="myregion"><div class="d-flex"><h5>' + regionTitle[i] + '</h5><span class="badge text-bg-success ms-auto">' + regionData[i].length + '</span></div></li>';
+                // 藏值: data-key="'+ i +'"(其中key=i)
+                $("#mylist").append(strHTML); //document.querySelector('#mylist').innerHTML=strHTML;
+            }
+            /*
+            for循環是一個通用的迭代工具，提供了靈活的控制結構，可以根據需要進行初始化、條件檢查和遞增/減操作。不返回任何值，但你可以在循環中根據需要進行操作。
+            forEach是專門用於"陣列"的迭代的方法，它更簡潔，對於遍歷陣列並對每個元素執行相同的操作非常有用。forEach方法可返回 undefined，因為它的主要目的是對陣列中的每個元素應用一個函數，而不是返回新的陣列或其他數據結構。
+            */
+        }
+        function drawRegionHotel(index) {
+            $("#myhotel").empty();
+
+            for (var i = 0; i < regionData[index].length; i++) {
+                var strHTML = '<div class="col-md-3 p-3 border border-3 shadow shadow-lg rounded rounded-5 m-3"><h4 class="fw-900">' + regionData[index][i].name + '</h4><h5 class="fw-900">地址: ' + regionData[index][i].display_addr + '</h5><h5 class="fw-900">電話: ' + regionData[index][i].tel + '</h5><a href="https://www.google.com/maps/search/?api=1&query=' + regionData[index][i].name + '" target="_blank" class="btn btn-primary">google map</a></div>';
+                // google map的api也可以用經緯度<a href="https://www.google.com/maps/search/?api=1&map_action=map&zoom=16&query=' + regionData[index][i].Y + ',' + regionData[index][i].X +'"
+                // `<div class="col-md-3 p-3 border border-3 shadow shadow-lg rounded rounded-5 m-3"><h4 class="fw-900">${regionData[index][i].name}`如果用「`XXX`」就可以不用加號(+)
+                $("#myhotel").append(strHTML);
+            }
+        }
+    </script>
+</body>
+
+</html>

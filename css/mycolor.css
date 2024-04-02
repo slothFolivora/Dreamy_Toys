@@ -1,0 +1,640 @@
+:root{
+    --mycolor: rgba(0, 0, 0, 0.3);/*0.3為透明度*/
+    
+    /* 網址https://www.shutterstock.com/zh-Hant/blog/101-free-color-combinations-design-inspiration */
+
+    /* 01.舒適與中性(Comfy & Neutral) */
+    --mushroom: #E1DCD9;
+    --mushroom_half: #E1DCD980;
+    --elephat: #8f8681;
+    --thatch: #a67f78;
+    --thatch_half: #a67f7880;/* thatch: 草木灰;顏色後面+二位數字為透明度 */
+    --gunmetal: #32435f;/* gunmetal: 炮銅(青銅的一種) */
+
+    /* 02.甜膩瑪瑙(Mellow Agate) */
+    --mustard: #ffd954;/* mustard: 芥末 */
+    --dijon: #e4b660;
+    --dijon_half: #e4b66080;/* dijon: 迪戎(芥末) */
+    --honey: #f2ab39;
+    --chestnut01: #69491a;/* chestnut: 板栗 */
+
+    /* 03.薄霧綠(Misty Greens) */
+    --swans_down: #D1EDE1;
+    --larchmere: #7BC5AE;
+    --observatory: #028C6A;
+    --kaitoke: #003E19;
+
+    /* 04.憂鬱植物藍(Subdued Succulent) */
+    --pistachio: #D1DDDB;
+    --turquoise: #85B8CB;
+    --cetulean: #1D6A96;
+    --spruce: #283B42;
+
+    /* 05.西部風格(Western Wear) */
+    --linen: #D5D2C1;
+    --twine: #BD8E62;
+    --fawn01: #A46843;
+    --hickory: #370D00;
+
+    /* 06.翡翠花園(Emerald Garden) */
+    --cool_mint: #9BCFB8;
+    --succulent: #7FB174;
+    --juniper: #689C97;
+    --brunswick: #072A24;
+
+    /* 07.瑰麗紅(Rosy Reds) */
+    --light_pink: #FFC2C3;
+    --coral: #FE7773;/* coral: 珊瑚(紅) */
+    --red_rose: #E81E25;
+    --blackberry: #0E0301;
+
+    /* 08.粉紅粉末(Pink Powders) */
+    --bone: #ECE4E2;
+    --baby_pink: #FCD3D1;
+    --bubblegum01: #FCDFF3;
+    --trick_me: #FE929F;
+
+    /* 09.電光紫(Electric Purples) */
+    --lilac01: #D3B7D8;/* lilac: 丁香(紫) */
+    --steel_pink: #A13E97;/* steel_pink: 金屬紫(反光) */
+    --eminence: #632A7E;/* eminence: 光譜紫 */
+    --valentino: #280E3B;/* valentino: 品牌 */
+
+    /* 10.土耳其咖啡(Turkish Coffee) */
+    --copper01: #b78338;
+    --chestnut02: #915c4c;
+    --faded_jade: #40686a;
+    --tamarind: #2f1812;
+
+    /* 11.色彩迴旋(Color Whirl) */
+    --blush01: #e3a6a1;
+    --berry: #bc5f6a;
+    --tiffany_blue: #19b3b1;
+    --deep_teal: #034b61;
+
+    /* 12.頹廢塗鴉(Grunge Graffiti) */
+    --french_gray: #bdbdbf;
+    --steel_blue01: #5580a0;
+    --sienna: #cc8a4d;
+    --eggplanet: #32435f;
+
+    /* 13天體綠(Celestial Green) */
+    --taupe: #b2a59f;
+    --space_blue: #023459;
+    --caribbean: #1e646e;
+    --peacock: #002c2f;
+    
+    /* 14.軟木塞(Cork Crowd) */
+    --chamoisee: #b98d72;
+    --hippie_pink: #ae4951;
+    --wine_berry: #57233a;
+    --smokey_black: #161b1f;
+
+    /* 15.蛇皮與鱗 (Snakeskin & Scales) */
+    --sand01: #ead6bd;
+    --barley: #a88661;
+    --slate: #504163;
+    --midnight: #00142f;
+
+    /* 16.群花齊開(Blooming Blossoms) */
+    --silver: #ccd3d9;
+    --petal01: #fed5d9;
+    --blossom: #7e212c;
+    --bark: #321e17;
+    
+    /* 17.多角萬花筒(Angular Kaleidoscope) */
+    --sand02: #e4dace;
+    --medallion: #e5bb4b;
+    --steel_blue02: #498eaf;
+    --spice: #631f16;
+
+    /* 18.覆盆莓塔 (Raspberry Tart） */
+    --pistachio: #f2dd66;
+    --raspberry: #9a1b27;
+    --blueberry01: #747ba9;
+    --martinique: #3b3857;
+
+    /* 19.維他命海(Vitamin Sea) */
+    --endeavor: #0359ae;
+    --tropics: #14b09b;
+    --sand03: #ebe5d9;
+    --cabana: #cc8a36;
+
+    /* 20.冰凍石 (Icy Stone) */
+    --ash_blue: #a6c2ce;
+    --dove_gray: #9c8f96;
+    --dandelion: #ebc57c;
+    --blue_slate: #6b799e;
+
+    /* 21.海綠色(Sea Green) */
+    --summer_green: #97baa4;
+    --jade01: #499360;
+    --deep_pine: #295651;
+    --whale_blue: #232941;
+
+    /* 22.和平與寧靜(Peace & Tranquility) */
+    --desert_sand: #dcc1b0;
+    --bali_hali01: #869dab;
+    --wenge: #847072;
+    --bastille: #3d313f;
+
+    /* 23.純粹與天然色(Pure & Pigmented） */
+    --sea_glass: #b2d6ca;
+    --poppy: #fe5858;
+    --pine: #024b40;
+    --merlot: #5d353e;
+
+    /* 24.柔和水彩 (Soft Watercolors) */
+    --alice_blue: #e5edf8;
+    --contessa: #e29e93;
+    --biscotti: #edbc7a;
+    --lochmara: #0384bd;
+    
+    /* 25.北極光(Northern Lights) */
+    --bermuda: #91d4c2;
+    --spring_green: #45bb89;
+    --aegean: #3d82ab;
+    --night_sky: #003853;
+
+    /* 26.目眩池色(Pool Daze) */
+    --teal: #1e94a0;
+    --regal: #004e6d;
+    --blush02: #fec0c1;
+    --watermelon01: #dc2543;
+    
+    /* 27. 漁民的晨光(Morning Fishermen) */
+    --bali_hali02: #8ca6b3;
+    --de_york: #87c488;
+    --desert01: #aa641e;
+    --lagoon: #284651;
+
+    /* 28.與花嬉戲(Floral & Fun) */
+    --cranberry: #db5a9a;
+    --melon: #e5a46e;
+    --deep_teal: #125669;
+    --jade02: #0a5b54;
+
+    /* 29.冷酷變色龍(Cool Chameleon) */
+    --lilac02: #d9cfe7;
+    --sage_mint: #a8bcba;
+    --frog: #acc66d;
+    --blue_bayoux: #50697d;
+    
+    /* 30.華麗星系(Gorgeous Galaxies) */
+    --nightfall: #324856;
+    --cool_sage: #4a746a;
+    --raw_sienna: #d18237;
+    --sunset: #d66c44;
+
+    /* 31.活躍的芭蕾舞孃(Bold Ballerinas) */
+    --peach01: #ffa289;
+    --havelock: #6a92cc;
+    --aster_purple: #706fab;
+    --livid_brown: #50293c;
+
+    /* 32.山際旅行(Mountainous Trek) */
+    --mischka: #dbdbe5;
+    --cadet_blue: #a5b7c1;
+    --deep_pine: #535d55;
+    --emperor: #514644;
+
+    /* 33.碼頭的鵜鶘(Piers & Pelican) */
+    --powder_blue01: #c2e6ff;
+    --moss_gress: #859f3c;
+    --tropic: #007f52;
+    --pier: #45451f;
+
+    /* 34.希臘逍遙遊(Greek Getaway) */
+    --blush_pink: #eb8f90;
+    --tangerine01: #ffb471;
+    --casper: #aebed2;
+    --regal_blue: #12406a;
+
+    /* 35.天然亞麻 (Natural Linens) */
+    --slate_grey: #6c838b;
+    --santa_fe: #bb7748;
+    --copper_rose: #9e6d70;
+    --americano: #7f726a;
+
+    /* 36.迷幻霧景(Foggy Landscapes) */
+    --delicate_pink: #fddcef;
+    --lilac_sky: #dec5e9;
+    --muted_cyan: #3a5a69;
+    --gloomy_navy: #030923;
+
+    /* 37.裸露的樺木(Bare Birch) */
+    --birch: #f2f4ef;
+    --clear_day: #c2e3f4;
+    --ronchi: #efb730;
+    --cinder: #030305;
+
+    /* 38.幾捆毛線 (Bundled Yarn) */
+    --sisal: #d7cbbd;
+    --tussock: #c1893f;
+    --pharlap: #af8f90;
+    --eggplanet: #69454f;
+
+    /* 39.海洋之下(Ocean Floor) */
+    --sand04: #f5e2d4;
+    --ochre: #ecba73;
+    --anakiwa: #a8dff1;
+    --galapagos: #024757;
+
+    /* 40.沙漠之美(Desert Beauty) */
+    --chinchilla01: #d0dae4;
+    --calypso: #2a6078;
+    --spring: #b9cd74;
+    --emerald: #085438;
+
+    /* 41.古色氛圍 (Vintage Vibes) */
+    --neptune: #82bbb5;
+    --bronze: #ca884b;
+    --japonica: #d1825b;
+    --harvest_gold: #cca142;
+
+    /* 42.公園中吹來的微風(Central Breeze) */
+    --foggy_grey: #afb3bc;
+    --corn: #e5ba22;
+    --olive01: #757430;
+    --oat: #d0b987;
+
+    /* 43. 島嶼旅遊(Island Tourist) */
+    --olive02: #7f9871;
+    --pebble: #9795a3;
+    --vermillion: #c94f44;
+    --raisin: #261326;
+
+    /* 44.盛開的捧花(Blooming Bouquet) */
+    --sprout: #cadbae;
+    --opal: #b0cccf;
+    --roman: #d65a50;
+    --seaweed: #1e3815;
+
+    /* 45.鎮靜與舒緩(Calming & Soothing) */
+    --mist: #bed3d4;
+    --cashmere: #e8caa4;
+    --olive03: #a1b872;
+    --straw: #e5d67b;
+
+
+    /* 46.戶外的綻放 (Exterior Blossoms) */
+    --rose: #eda2b6;
+    --mantis: #abbf4e;
+    --cadet: #7a96a2;
+    --heavy_metal: #252621;
+
+    /* 47.發光線體(Luminous Lines) */
+    --sky_blue: #8ad5eb;
+    --vivid_purple: #8a54a2;
+    --scampi: #5954a4;
+    --denim: #04254e;
+
+    /* 48.熱帶風情冰棒(Tropic Popsicles) */
+    --creamsicle: #fec748;
+    --pomegranate: #d92139;
+    --kiwi: #aec33a;
+    --domiz_slate: #253f58;
+
+    /* 49.扭曲的空想(Distorted Abstraction) */
+    --electric_blue: #33c7f7;
+    --orchid01: #dfa0c8;
+    --cobalt: #2c439b;
+    --port_gore: #25255f;
+
+    /* 50. 霓虹流行(Pops of Neon) */
+    --melanim: #eac1db;
+    --fuchsia: #a1268e;
+    --brick_red: #9d1e31;
+    --aubergine: #2c0136;
+
+    /* 51.雨中視線(Rainy Views) */
+    --ash: #c7c5b8;
+    --chambray: #38618f;
+    --carrot: #fd9735;
+    --persimmon01: #ff6745;
+
+    /* 52. 亞利桑那日落(Arizona Sunsets) */
+    --marigold01: #fec804;
+    --persimmon02: #f26322;
+    --plum: #7a2d59;
+    --indigo: #181b46;
+    
+    /* 53.綻放的多彩(Colorful Bloom) */
+    --rosy_brown: #eac9c0;
+    --orchid02: #dab2d3;
+    --fluorescent: #9edae3;
+    --cornflower: #65c4d8;
+
+    /* 54.粉柔餡餅(Pastel Pastries) */
+    --pastel_pink: #ffd0d6;
+    --ziggurat: #b7dde0;
+    --lemonade: #fee19f;
+    --falcon: #735b69;
+
+    /* 55.細緻的曼陀羅(Meticulous Mandala) */
+    --wheat: #f6e0ae;
+    --butterscotch: #ffb312;
+    --eucalyptus: #85cfb4;
+    --razzmatazz: #ed186b;
+
+    /* 56.深藍洞穴( Cobalt Caves) */
+    --safferon: #efc638;
+    --azure: #416eb6;
+    --amethyst: #715ca8;
+    --raisin: #2b103b;
+
+    /* 57.明亮的城市景致(Bright Cityscape) */
+    --petal02: #f0bbc3;
+    --fern: #10a44a;
+    --sorbus: #fd8411;
+    --stone: #877d7c;
+
+    /* 58.發光氣泡( Luminous Bubbles) */
+    --lemon01: #ecec84;
+    --coral: #ffb69b;
+    --lavender: #a299ca;
+    --seafoam: #7ccaae;
+
+    /* 59.池畔波浪(Poolside Waves) */
+    --ecru: #d6d0ae;
+    --daffodil: #f5e68b;
+    --poolside: #6bb6a1;
+    --flame01: #df6033;
+
+    /* 60.意大利住宅(Italian Dwellings) */
+    --goldrod: #fed770;
+    --salmon: #f29f8f;
+    --tangerine02: #fb7552;
+    --myrtle: #076a67;
+    
+    /* 61.生動的疊加色彩( Vivid Overlays) */
+    --arctic: #a9dfed;
+    --bright_lilac: #ebd6e8;
+    --nalibu: #84c0e9;
+    --blue_violet: #37119a;
+
+    /* 62.陽光下的扇貝(Sunny Scallops) */
+    --pineapple: #fce53d;
+    --sun01: #ffa614;
+    --valencia: #ca4026;
+    --claret: #7e1331;
+
+    /* 63.粉彩的露台(Pastel Patios) */
+    --ballet01: #f5c9ca;
+    --spindle: #aad4ec;
+    --saffron01: #f5ce45;
+    --terracotta: #ca664e;
+
+    /* 64.活力氛圍 (Vibrant Vibes) */
+    --canary: #ffe246;
+    --watermelon02: #f4a5a1;
+    --robin_egg: #1abcbd;
+    --deep_sea: #014254;
+
+    /* 65.鮮嫩的柑橘(Crisp Citrus) */
+    --lemon02: #f9e54e;
+    --orange01: #f8981d;
+    --pomegranate: #e12e4b;
+    --turquoise: #5bbdc8;
+
+    /* 66.辣椒(Hot Chili) */
+    --chartreuse: #bcc74f;
+    --jaffa: #f38f3a;
+    --chipotle: #712333;
+    --easy_bay: #3b3a73;
+
+    /* 67.茶會(Tea Party) */
+    --powder_blue02: #b1dade;
+    --casablanca: #f4ad45;
+    --mangenta: #ad184f;
+    --leafy_greens: #496a23;
+
+    /* 68.彩虹白日夢(Rainbow Reverie) */
+    --banana: #ffec73;
+    --keppel: #77bca9;
+    --orange_peel: #f78e1e;
+    --orient: #015077;
+
+    /* 69.壓克力狂想(Acrylic Madness) */
+    --bubblegum02: #edc9e0;
+    --sun02: #ffb42a;
+    --coquelicot: #ee1d47;
+    --mulberry: #742063;
+
+    /* 70.新春(Fresh Spring) */
+    --peachy: #faa98b;
+    --azalea: #e6aecf;
+    --aqua: #aee0dd;
+    --pacific_blue: #01acbd;
+
+    /* 71.夏季逍遙遊(Summer Getaway) */
+    --baby_blue: #bedae5;
+    --golden01: #eecb27;
+    --crimson: #e13239;
+    --indigo: #1f1762;
+
+    /* 72.波希米亞圖騰(Bohemian Motif) */
+    --celery: #f2f3af;
+    --saffron02: #ffd84f;
+    --scarlet: #d74e26;
+    --clear_sky01: #50a0c3;
+
+    /* 74.惹人注目的金剛鸚鵡(Striking Macaw) */
+    --canary: #ffdd00;
+    --salamander: #f15a22;
+    --limemade: #5fad46;
+    --clear_sky02: #478fcd;
+
+    /* 75.春季狂歡(Spring Fling) */
+    --amber: #feb630;
+    --petal03: #f4c5d7;
+    --punch: #ff445f;
+    --crocodile: #6f925a;
+
+    /* 76.錦鯉池(Koi Pond) */
+    --golden02: #f2af1d;
+    --koi: #ee6a22;
+    --moon_mist: #d3d6c3;
+    --kokoda: #5a5c4f;
+
+    /* 77. 日本庭園(Japanese Gardens) */
+    --wax_flower: #fec6ad;
+    --olive04: #a2d75c;
+    --orange02: #fe6323;
+    --charade: #1f1f29;
+
+    /* 78.柑橘酒(Citrus Punch) */
+    --mango01: #ffb530;
+    --peach02: #eeb3a3;
+    --blood_orange: #f3553c;
+    --carnaby_tan: #642a02;
+
+    /* 79.芒果幻想(Mango Dream) */
+    --mango02: #ffe083;
+    --popsicle: #e99a24;
+    --dark_green: #2b3c1a;
+    --blueberry02: #171516;
+
+    /* 80. 木頭與爐火(Wood Fired) */
+    --delta: #a5a79a;
+    --gamboge: #eca442;
+    --tomato01: #ca2521;
+    --pepperoni: #61120e;
+
+    /* 81.赤陶大理石(Terracotta Marble) */
+    --brandy: #d8b484;
+    --copper02: #b16b2f;
+    --tuscany: #c76331;
+    --tabasco: #9a2513;
+    
+    /* 82.鬱鬱蔥蔥的豪華(Lush & Luxurious) */
+    --yam: #cc5b3b;
+    --burnt_umber: #982827;
+    --mauve: #92617e;
+    --wine: #3c1832;
+
+    /* 83.壽司拼盤(Sushi Platter) */
+    --shrimp: #f69864;
+    --tuna: #e95761;
+    --caviar: #290f02;
+    --crusoe: #1e4620;
+
+    /* 84. 在陰影下的禽鳥(Bird in the Shadows) */
+    --beeswax: #fef0bf;
+    --casablanca: #f3b749;
+    --storm_dust: #655c57;
+    --mikado: #2e1e11;
+
+    /* 85.鄉村與傳統(Rustic & Traditional) */
+    --hampton: #e5d1ac;
+    --tango: #ef6e2c;
+    --espresso: #612717;
+    --palm_green: #2c413c;
+
+    /* 86.花蝴蝶的喜悅(Butterfly Bliss) */
+    --olivine: #9ab878;
+    --jasmine: #f2de99;
+    --monarch: #e98d24;
+    --ebony_clay: #252839;
+
+    /* 87.冒險紅(Adventurous Reds) */
+    --thistle: #867182;
+    --khaki: #f2d3c1;
+    --marmalade: #d36d3d;
+    --ruby: #b12c25;
+
+    /* 88.健身運動風格(Fitness Sportswear) */
+    --bone: #dfe4de;
+    --surf_green: #126f80;
+    --carnation: #f95151;
+    --smoky_blue: #525e76;
+
+    /* 89.紡織染料(Textile Dyes) */
+    --desert02: #e8c7b6;
+    --apricot: #eb9772;
+    --smoke_strange: #7a7a7f;
+    --chambray: #32435f;
+
+    /* 90.屋頂視角 (Rooftop Views) */
+    --silver: #ced7d4;
+    --cantaloupe: #fcbe71;
+    --rust01: #e55c25;
+    --labradorite: #608796;
+
+    /* 91.純淨的農產 (Pure Produce) */
+    --amaranth: #9e5165;
+    --tomato02: #a51e22;
+    --zucchini: #204b24;
+    --denim: #0b2637;
+
+    /* 92.地中海的船舶(Mediterranean Marine) */
+    --tangerine03: #feb75d;
+    --scuba_blue: #55c9ea;
+    --prussian: #013b63;
+    --midnight: #000e2b;
+
+    /* 93.多汁飽滿的水果(Juicy Fruits) */
+    --strawberry: #ee3239;
+    --fruit_salad: #5eaa5f;
+    --supernova: #fece00;
+    --grape01: #9d6ab9;
+
+    /* 94.生鏽的柵欄(Rusted Gates) */
+    --botticelli: #d2e0e9;
+    --steel_blue03: #4579a0;
+    --daintree: #002130;
+    --rust02: #a35d22;
+
+    /* 95. 白雪與陽光(Snow & Sunshine) */
+    --blonde: #ffefa1;
+    --marigold02: #ffb21a;
+    --opium: #876363;
+    --easy_bay: #414b6f;
+
+    /* 96. 裝飾花卉(Decorative Florals) */
+    --ballet02: #e6b6c2;
+    --lipstick: #d4587a;
+    --cerise: #dc364c;
+    --moss: #778633;
+
+    /* 97.蜜蜂嗡嗡與盛開的花朵(Buzzing Blooms) */
+    --bumblebee: #fed700;
+    --curious_blue: #1e9ad0;
+    --copper03: #7e2e0b;
+    --tawny: #9a6231;
+
+    /* 98. 雨天 (Rainy Day) */
+    --havelock: #596fb5;
+    --tangerine04: #fe7139;
+    --chinchilla02: #928a99;
+    --grape02: #695d85;
+
+    /* 99.麵包店的甜點(Bakery Treats) */
+    --sourdough: #fbd1a7;
+    --slate: #607178;
+    --charcoal: #353c42;
+    --oxford: #01273c;
+
+    /* 100. 老虎與苔原(Tigers & Tundra) */
+    --tundra: #9ea2ab;
+    --glancier_blue: #6d8db6;
+    --tiger: #ffcc71;
+    --cider: #a16f3a;
+
+    /* 101.古早的陳列 (Aged Arrangement) */
+    --blue_willow: #9cb3c5;
+    --sage: #586c50;
+    --flame02: #d5683d;
+    --fawn02: #865b2e;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

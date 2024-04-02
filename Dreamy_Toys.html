@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamy_Toys</title>
+    <!-- SPA: single-page application單頁式應用程式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/mycolor.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <style>
+        .textcolor01 {
+            color: var(--bone);
+        }
+
+        .textcolor02 {
+            color: var(--baby_pink);
+        }
+
+        .textcolor03 {
+            color: var(--light_pink);
+        }
+
+        .textcolor04 {
+            color: var(--trick_me);
+        }
+
+        /* s02 navbar */
+        .train_head {
+            width: 150px;
+            height: 60px;
+            background-image: url('images/home/train01_01.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .train {
+            width: 160px;
+            height: 60px;
+            background-image: url('images/home/train01_02.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+
+
+        .s02_box01 {
+            width: 50vh;
+            height: 300px;
+            display: inline-block;
+        }
+
+        /* s03 */
+        #s03 {
+            background-color: var(--clear_sky02);
+        }
+
+        .child {
+            background-image: url(images/home/child04.png);
+            /* background-image: linear-gradient(45deg, var(--mushroom), var(--thatch_half)), url(images/home/child04.png); */
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            /* background-attachment: fixed; */
+            background-size: auto;
+        }
+
+        .cloud {
+            position: absolute;
+            /* inset: 0; 表示 .cloud 元素將被設置為與其最近的定位祖先的四個邊緣都具有零的距離，也就是填滿整個父元素的範圍。 */
+            inset: 0;
+            /* inset: 上(top) 右(right) 下(bottom) 左(left) */
+
+            /* 被放置在其他元素的後面，通常用於創建背景效果 */
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* s04 */
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* s06 */
+        .slick-slide {
+            transform: scale(0.8);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .slick-center {
+            transform: scale(1.1);
+        }
+
+        .slick-next:before {
+            content: '>>';
+            opacity: 1;
+        }
+
+        .slick-prev:before {
+            content: '<<';
+            opacity: 1;
+        }
+
+        #s07 {
+            height: 80vh;
+            overflow: hidden;
+            background-image: linear-gradient(0deg, var(--salamander), var(--mango02));
+        }
+
+        .sky {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            /* 設置元素的寬度為其包含塊寬度的 100%。 */
+            width: 100%;
+            /* 設置元素的高度為其包含塊高度的 130%。 */
+            height: 130%;
+            background-image: url('images/home/footprint01_02.png');
+            /* 設置背景圖片的大小為寬度 100%，高度為寬度的 40%。 */
+            background-size: 100% 40%;
+            background-repeat: no-repeat;
+        }
+
+        .feet {
+            position: absolute;
+            bottom: 20px;
+            width: 72%;
+            height: 100%;
+            /* 設置 Webkit 前綴的動畫效果，名為 parallax_fg，以線性方式（linear）執行，持續時間為 30 秒，無限次（infinite），同時應用於開始和結束（both）。 */
+            -webkit-animation: parallax_fg linear 30s infinite both;
+            /* 設置動畫效果，名為 parallax_fg，以線性方式（linear）執行，持續時間為 10 秒，無限次（infinite），同時應用於開始和結束（both）。 */
+            animation: parallax_fg linear 10s infinite both;
+            /* 設置背景圖片為 /images/home/footprint01_01.png，並且使其從左上角開始顯示，水平方向填滿元素，並且在 x 軸上重複顯示。 */
+            background: url('images/home/footprint01_01.png') 0 100% repeat-x;
+            background-size: 30%;
+        }
+
+        .leopard_cat {
+            position: absolute;
+            bottom: 20px;
+            /* 將元素的左側邊緣固定在其包含塊的左側的 60% 處。 */
+            left: 60%;
+            width: 30%;
+            height: 350px;
+            background-repeat: no-repeat;
+            /* 使背景圖片保持原始比例，並且確保整個圖片完全顯示在元素內。 */
+            background-size: contain;
+            background-image: url(images/home/leopard_cat02.png);
+        }
+
+        @keyframes parallax_fg {
+            from {
+                background-position: 0% 100%;
+            }
+
+            to {
+                background-position: -100% 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- section 01 icon-->
+    <section class="bg-info">
+        <div class="container">
+            <div class="text-end">
+                <a href="#"><i class="fa-brands fa-facebook fa-bounce fa-2x"></i></a>
+                <a href="#"><i class="fa-brands fa-line fa-flip fa-2x"
+                        style="--fa-flip-x: 1; --fa-flip-y: 0;--fa-animation-duration: 3s;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram fa-beat fa-2x" style="--fa-beat-scale: 1.3;"></i></a>
+                <!-- 
+                    可以把fontawesome的icon當文字修改
+                    fa-3x: 把圖檔放大3倍 
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- section 02 navbar-->
+    <section>
+        <nav class="navbar navbar-expand-lg px-3" data-bs-theme="white" style="background-color: var(--blueberry02);">
+
+            <a class="navbar-brand" href="#">
+                <img src="images/home/cloud01.png" alt="Bootstrap" width="50px" height="50px">
+            </a>
+            <!--
+                 <a class="navbar-brand" href="#">
+                    <i class="fa-solid fa-cookie-bite fa-spin"></i>
+                </a> 
+            -->
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active p-0 train_head" aria-current="page" href="Dreamy_Toys.html">
+                            <h5 class="d-flex justify-content-center align-items-end my-0 ms-5" style="height:45px;">
+                                <strong>Home</strong>
+                            </h5>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link p-0 train" aria-current="page" href="product.html" target="_blank">
+                            <h5 class="d-flex justify-content-center align-items-end m-0" style="height:45px">
+                                <strong>商品介紹</strong>
+                            </h5>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link p-0 train" aria-current="page" href="member.html">
+                            <h5 class="d-flex justify-content-center align-items-end m-0" style="height:45px">
+                                <strong>會員中心</strong>
+                            </h5>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link p-0 train" aria-current="page" href="qa.html">
+                            <h5 class="d-flex justify-content-center align-items-end m-0" style="height:45px">
+                                <strong>常見問題</strong>
+                            </h5>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <!--
+
+                            <a class="nav-link p-0 train" aria-current="page">
+                                <h5 class="d-flex justify-content-center align-items-end m-0" style="height:45px">
+                                    <strong>搜尋商品</strong>
+                                </h5>    
+                            </a>
+                        -->
+                        <form class="d-flex pt-2 " role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </li>
+
+                    <!-- target="_blank": 另開新分頁 -->
+
+                    <!-- 
+                    <li class="nav-item"> 
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                        -->
+                </ul>
+
+                <div>
+                    <span class="text-warning h5" id="user_message"></span>
+                    <!-- 要用span行內元素，才不會跑版到登入註冊按鈕上面 -->
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                        data-bs-target="#loginModal" id="s02_login_btn">登入
+                    </button>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#registerModal"
+                        id="s02_reg_btn">註冊
+                    </button>
+                    <button type="button" class="btn btn-outline-danger d-none" id="s02_logout_btn">登出
+                    </button>
+
+                    <!-- btn-outline: 按鈕中空 -->
+                </div>
+
+                <!-- 
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+          -->
+            </div>
+
+        </nav>
+    </section>
+
+    <!-- section 02 loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header  text-bg-success">
+                    <h1 class="modal-title fs-5 fw_900" id="exampleModalLabel">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="" class="form-label">帳號</label>
+                        <input type="text" class="form-control" id="login_username" name="login_username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">密碼</label>
+                        <input type="password" class="form-control" id="login_password" name="login_password">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="login_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 02 registerModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header text-bg-info">
+                    <h1 class="modal-title fs-5 fw_900" id="exampleModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="timeline-section">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-6">
+                                <h2>圓·夢 益智玩具 會員條款</h2>
+                                <p class="s02_box01 overflow-auto">
+                                    歡迎您加入圓·夢 益智玩具的會員計畫！請您詳細閱讀以下條款及條件，加入我們的會員計畫代表您已同意並接受以下條款：<br>
+                                    1. 會員資格：<br>
+                                    本會員計畫僅適用於年滿18歲並具有完全民事行為能力的自然人。<br>
+                                    每位會員只能擁有一個帳號，帳號不可轉讓或出租他人使用。<br>
+
+                                    2. 個人資料：<br>
+                                    加入會員計畫時，您需提供真實、正確、最新及完整的個人資料。<br>
+                                    我們將根據我們的隱私政策來處理您的個人資料，保護您的隱私。<br>
+
+                                    3. 會員福利：<br>
+                                    會員可享有專屬優惠、促銷活動以及其他會員專屬福利，詳細內容請參閱我們的網站或官方通知。<br>
+                                    我們保留隨時更改、修改或終止會員福利的權利，恕不另行通知。<br>
+
+                                    4. 帳號安全：<br>
+                                    會員應當妥善保管自己的帳號和密碼，不得將帳號轉讓或出借給他人使用。<br>
+                                    若會員發現帳號遭到未經授權的使用，應立即通知我們。<br>
+
+                                    5. 取消與終止：<br>
+                                    會員可隨時通過我們的網站或客服途徑取消會員資格。<br>
+                                    我們保留終止或暫停會員資格的權利，若發現會員違反本條款或任何不當行為，我們有權立即終止其會員資格並停止提供服務。<br>
+
+                                    6. 免責聲明：<br>
+                                    本會員計畫不承擔會員因使用本服務而可能遭受的損失或損害。<br>
+                                    我們不對因系統故障、第三方網站或服務失效而造成的損失負責。<br>
+
+                                    7. 爭議解決：<br>
+                                    本條款受中華民國法律管轄，任何因本條款引起的爭議應提交至本公司所在地的法院解決。<br>
+
+                                    8. 條款修改：<br>
+                                    我們保留隨時修改本條款及條件的權利，修改後的條款將在我們的網站上公布，請您定期查閱以確保您瞭解最新條款。<br>
+
+                                    聯絡我們：<br>
+                                    如有任何問題或疑慮，請隨時與我們聯繫：<br>
+                                    電子郵件：support@Dreamy Toys.com<br>
+                                    客服電話：(123)456-7890<br>
+
+                                    感謝您加入我們的會員計畫，祝您購物愉快！<br>
+                                </p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="chk01" name="chk01">
+                                    <label class="form-check-label" for="chk01">
+                                        我同意上述條款內容
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">帳號</label>
+                                    <input type="text" class="form-control" placeholder="帳號請設英數字3~12字" id="username"
+                                        name="username">
+                                    <div class="valid-feedback">此帳號可註冊</div>
+                                    <div class="invalid-feedback">此帳號不可註冊</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">密碼</label>
+                                    <input type="password" class="form-control" placeholder="密碼請設英數字6~20字" id="password"
+                                        name="password">
+                                    <div class="valid-feedback">字數符合規定</div>
+                                    <div class="invalid-feedback">字數不符合規定</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="re_password" class="form-label">確認密碼</label>
+                                    <input type="password" class="form-control" placeholder="請確認密碼是否相符" id="re_password"
+                                        name="re_password">
+                                    <div class="valid-feedback">密碼相符</div>
+                                    <div class="invalid-feedback">密碼不符</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="請輸入可使用之email" id="email"
+                                        name="email">
+                                    <div class="valid-feedback">email輸入正確</div>
+                                    <div class="invalid-feedback">此email無法註冊</div>
+                                </div>
+                                <!-- 
+                            <label for="username" class="form-label">的for可以呼叫id(<input>的id"username"")
+                          -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="reg_btn">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 03 product-->
+    <section id="s03">
+        <div class="container">
+            <div class="row position-relative child" style="height: 100vh;">
+
+                <div class="d-flex justify-content-center align-items-center col-md-3 position-absolute"
+                    style="z-index: 1;height: 150px;top: 20px;">
+                    <img src="images/home/cloud05_01.png" alt="cloud05_01" class="cloud">
+                    <div class="text01 position-absolute">
+                        <h1 class="textcolor01 mt-0"><strong>新品上市</strong></h1>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center col-md-3 position-absolute end-0"
+                    style="z-index: 1;height: 150px;top: 20px">
+                    <img src="images/home/cloud05_05.png" alt="cloud05_05" class="cloud">
+                    <div class="text01 position-absolute">
+                        <h1 class="textcolor02 mt-0"><strong>經典IP</strong></h1>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center col-md-3 position-absolute top-50 start-0"
+                    style="z-index: 1;height: 150px;top: 20px">
+                    <img src="images/home/cloud05_07.png" alt="cloud05_07" class="cloud">
+                    <div class="text01">
+                        <h1 class="textcolor03 mt-0"><strong>學齡前專區</strong></h1>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center col-md-3 position-absolute top-50 end-0"
+                    style="z-index: 1;height: 150px;top: 20px">
+                    <img src="images/home/cloud05_11.png" alt="cloud05_11" class="cloud">
+                    <div class="text01 position-absolute">
+                        <h1 class="textcolor04 mt-0"><strong>人氣商品</strong></h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--
+            class="d-flex justify-content-center align-items-center": 一個 flex 容器 (d-flex)，並且水平與垂直置中
+        -->
+    </section>
+
+    <!-- section 04 carousel-->
+    <section id="s04">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <!-- 
+        data-bs-ride="carousel": 幻燈片自動換頁
+        data-bs-interval="3000": 自動換頁時間間隔
+        -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item bg-cover active"
+                    style="background-image: url(images/home/discount07.jpg);height:100vh;background-repeat: no-repeat;background-position: center center;">
+                    <div class="carousel-caption d-none d-md-block p-3 rounded-5 shadow-sm px-0">
+                        <h5 class="fw_900">優惠活動01</h5>
+                        <p class="fw-500">幫我感情共享兩人專業人物及其二級支持，共同透明劇情光碟。</p>
+                    </div>
+                </div>
+                <div class="carousel-item"
+                    style="background-image: url(images/home/discount10.jpg); height: 100vh;background-repeat: no-repeat;background-position: center center;">
+                    <div class="carousel-caption d-none d-md-block p-3 rounded-5 shadow-sm">
+                        <h5 class="fw_900">優惠活動02</h5>
+                        <p class="fw-500">幫我感情共享兩人專業人物及其二級支持，共同透明劇情光碟。</p>
+                    </div>
+                </div>
+                <div class="carousel-item"
+                    style="background-image: url(images/home/discount15.jpg); height: 100vh;background-repeat: no-repeat;background-position: center center;">
+                    <div class="carousel-caption d-none d-md-block p-3 rounded-5 shadow-sm">
+                        <h5 class="fw_900">優惠活動03</h5>
+                        <p class="fw-500">幫我感情共享兩人專業人物及其二級支持，共同透明劇情光碟。</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- section 05 -->
+    <section id="s05" class="mb-3">
+        <div class="container">
+            <div class="fs-1 fw_900 text-center text-warning">獲獎紀錄</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <i class="fa-solid fa-award fa-4x me-3 text-info"></i>
+                        </div>
+                        <div>
+                            <h2 class="fw_900">獎項名稱001</h2>
+                            <p>意思保證世紀，這是頁面但在利潤也要雙方追求全國，大家都一下原本收藏以往玩家，群眾是由我們，關鍵工程。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <i class="fa-solid fa-award fa-4x me-3 text-info"></i>
+                        </div>
+                        <div>
+                            <h2 class="fw_900">獎項名稱002</h2>
+                            <p>意思保證世紀，這是頁面但在利潤也要雙方追求全國，大家都一下原本收藏以往玩家，群眾是由我們，關鍵工程。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <i class="fa-solid fa-award fa-4x me-3 text-info"></i>
+                        </div>
+                        <div>
+                            <h2 class="fw_900">獎項名稱003</h2>
+                            <p>意思保證世紀，這是頁面但在利潤也要雙方追求全國，大家都一下原本收藏以往玩家，群眾是由我們，關鍵工程。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <i class="fa-solid fa-award fa-4x me-3 text-info"></i>
+                        </div>
+                        <div>
+                            <h2 class="fw_900">獎項名稱004</h2>
+                            <p>意思保證世紀，這是頁面但在利潤也要雙方追求全國，大家都一下原本收藏以往玩家，群眾是由我們，關鍵工程。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 06 精選商品-->
+    <section id="s06">
+        <h1 class="text-center py-3">精選商品</h1>
+        <div class="container pb-4">
+            <div class="your-class2">
+                <div>
+                    <div class="card text-center mb-3">
+                        <img src="images/original/bubble01.jpg" class="card-img-top" style="height: 220px;">
+                        <h1>泡泡大冒險</h1>
+                        <p>X月X日至X月X日</p>
+                        <p>滿200元打85折</p>
+                        <button class="btn btn-outline-success">查看更多</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="card text-center mb-3">
+                        <img src="images/original/Doraemon01.jpg" class="card-img-top" style="height: 220px;">
+                        <h1>哆啦A夢職業探索玩具組</h1>
+                        <p>X月X日至X月X日</p>
+                        <p>特價xxx元，限量20份送完為止</p>
+                        <button class="btn btn-outline-success">查看更多</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="card text-center mb-3">
+                        <img src="images/original/pikachu03.jpg" class="card-img-top" style="height: 220px;">
+                        <h1>名偵探皮卡丘</h1>
+                        <p>XXXX新品</p>
+                        <p>將於X月X日開賣</p>
+                        <button class="btn btn-outline-success">查看更多</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="card text-center mb-3">
+                        <img src="images/original/pikachu05.jpg" class="card-img-top" style="height: 220px;">
+                        <h1>皮卡丘與伊布(肥?)拼圖組</h1>
+                        <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+                        <button class="btn btn-outline-success">查看更多</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section 07 石虎動畫-->
+    <section id="s07" class="position-relative">
+        <!--
+            <section id="s07" class="position-relative" style="height:100vh; overflow: hidden;background-image: linear-gradient(0deg, var(--dark_green), transparent);">
+        -->
+        <div class="row">
+            <div class="sky"></div>
+            <div class="feet"></div>
+            <div class="leopard_cat"></div>
+        </div>
+    </section>
+
+    <!-- section 08 about-->
+    <section id="s08" class="mt-3" style="position: relative;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2 class="fw-900 text-center">關於我們</h2>
+                    <p>小孩新型，老闆管理系統咖啡或是業務生成事務接觸提示訊息，經典配套享受最快安全治理刪除必要靜靜，都說。</p>
+                    <dl class="row">
+                        <dt class="col-sm-3">品牌簡介</dt>
+                        <dd class="col-sm-9"></dd>
+
+                        <dt class="col-sm-3">品牌理念</dt>
+                        <dd class="col-sm-9">
+                            <p>Definition for the term.</p>
+                            <p>And some more placeholder definition text.</p>
+                        </dd>
+
+                        <dt class="col-sm-3 text-truncate">營業資訊</dt>
+                        <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+
+                        <dt class="col-sm-3"></dt>
+                        <dd class="col-sm-9">
+                            <dl class="row">
+                                <dt class="col-sm-4">Nested definition list</dt>
+                                <dd class="col-sm-8">I heard you like definition lists.</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-5">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.0356956859987!2d120.60779107633451!3d24.170480872517764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693e0519509eed%3A0x64b92a3cf0d412eb!2z55m85bGV572y5Lit5b2w5oqV5YiG572yKOW3pealreWNgOS4gOi3ryk!5e0!3m2!1szh-TW!2stw!4v1704329017091!5m2!1szh-TW!2stw"
+                        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- section 09 -->
+    <section>
+
+    </section>
+
+    <!-- section 12 footer-->
+    <section id="s12" style="background-image: url(images/home/mountain.png);height: 85vh; background-size: contain;">
+        <footer class="footer">
+            <div class="container">
+                <address class="site-info">
+                    <div class="site-info-title">Dreamy Toys 圓夢‧玩具</div>
+                    <a class="site-info-item phone" href="tel:062898695">062898695</a><br>
+                    <a class="site-info-item mail" href="mailto:service@toys.com.tw">service@toys.com.tw</a><br>
+                    <span class="site-info-item hours">週一~週五 AM9:00~PM5:00 (例假日公休)</span><br>
+                    <span class="site-info-item addr"></span>
+                </address>
+                <ul class="follow-list list">
+                    <li>
+                        <a class="fb" href="https://www.facebook.com/toys" target="_blank"><span class="txt">Dreamy Toys
+                                圓‧夢 益智玩具</span></a>
+                    </li>
+                    <li>
+                        <a class="ig" href="https://www.instagram.com/toys/" target="_blank">
+                            <span class="txt">dreamy_toys</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="line line-qrcode-toggle" href="https://line.me/R/ti/p/%40qxh9373h"
+                            target="_blank"><span class="txt">@qxh9373h</span></a>
+                    </li>
+                </ul>
+                <div class="line-qrcode">
+                    <a class="box" href="https://line.me/R/ti/p/%40qxh9373h" target="_blank"><img
+                            src="https://www.557toys.com.tw/photos/shares/line_qrcode.jpg" alt=""></a>
+                </div>
+
+                <p class="copyright">
+                    <span class="elephant"></span>
+                    Copyright © Playful Toys 頑‧玩具 2024.
+                    <span class="author">Design by 誠</span>
+                </p>
+
+                <div class="float-end">
+                    <a href="#" class="btn btn-info" title="回頂部">TOP</a>
+                </div>
+
+                <div class="float-end">Float end on all viewport sizes</div><br>
+        </footer>
+    </section>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+
+    <!-- slick -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+
+    <!-- WOW -->
+    <script>
+        new WOW().init();
+    </script>
+    <script>
+        $('.your-class2').slick({
+            centerMode: true,
+            centerPadding: '0px',
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '0px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+
+
+
+        // 註冊頁面框
+        var flag_chk01 = false;
+        var flag_username = false;
+        var flag_password = false;
+        var flag_re_password = false;
+        var flag_email = false;
+
+        $(function () {
+
+            //判斷是否登入
+            if (getCookie("UID01") != "") {
+                //UID01存在, 傳遞至後端api判斷是否正確
+                var dataJSON = {};
+                dataJSON["UID01"] = getCookie("UID01");
+                console.log(JSON.stringify(dataJSON));
+                $.ajax({
+                    type: "POST",
+                    url: "member_CheckUID_api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_CheckUID,
+                    error: function () {
+                        alert("error:member_CheckUID_api.php");
+                    }
+                });
+            }
+
+            //登出按鈕監聽 #s02_logout_btn
+            $("#s02_logout_btn").click(function () {
+                // setCookie("UID01", "", 7);
+                document.cookie = "UID01=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                location.href = "Dreamy_Toys.html";
+            });
+            /*
+            解除cookie有2種方法:
+            1.將UID的value設為空值
+            2.將UID的日期變成過期日期無法使用
+            */
+
+            //監聽 checkbox #chk01
+            $("#chk01").change(function () {
+                if ($(this).is(":checked")) {
+                    console.log("同意");
+                    flag_chk01 = true;
+                } else {
+                    console.log("未同意");
+                    flag_chk01 = false;
+                }
+            });
+            /*
+            $("#chk01").change(function(){}預設未做任何動作，改變(change)時
+            $(this).is(":checked")注意已勾選(checked)前要接":"
+            */
+
+            //即時監聽 #username
+            $("#username").bind("input propertychange", function () {
+                console.log($(this).val().length);
+                if ($(this).val().length >= 3 && $(this).val().length <= 12) {
+                    //符合規定
+                    var dataJSON = {};
+                    dataJSON["Username"] = $("#username").val();
+                    console.log(JSON.stringify(dataJSON));
+
+                    $.ajax({
+                        type: "POST",
+                        url: "member_check_uni_api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_check_uni,
+                        error: function () {
+                            alert("error: member_check_uni_api.php");
+                        }
+                    });
+                    /*
+                    $(this).removeClass('is-invalid');
+                    $(this).addClass('is-valid');
+                    flag_username = true;
+                    */
+                } else {
+                    //不符合規定
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                    flag_username = false;
+                }
+            });
+
+            //即時監聽 #password
+            $("#password").bind("input propertychange", function () {
+                console.log($(this).val().length);
+                if ($(this).val().length >= 6 && $(this).val().length <= 20) {
+                    //符合規定
+                    $(this).removeClass('is-invalid');
+                    $(this).addClass('is-valid');
+                    flag_password = true;
+                } else {
+                    //不符合規定
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                    flag_password = false;
+                }
+            });
+
+            //即時監聽 #re_password
+            $("#re_password").bind("input propertychange", function () {
+                if ($(this).val() == $("#password").val()) {
+                    //符合規定
+                    $(this).removeClass('is-invalid');
+                    $(this).addClass('is-valid');
+                    flag_re_password = true;
+                } else {
+                    //不符合規定
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                    flag_re_password = false;
+                }
+            });
+
+            //即時監聽 #email(必須含有'@'和'com'，且字數0~20之間)
+            $("#email").bind("input propertychange", function () {
+                console.log($(this).val());
+                if ($(this).val().includes('@') && $(this).val().includes('com') && $(this).val().length > 0 && $(this).val().length <= 25) {
+                    // 符合規定
+                    $(this).removeClass('is-invalid');
+                    $(this).addClass('is-valid');
+                    flag_email = true;
+                } else {
+                    // 不符合規定
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                    flag_email = false;
+                }
+            });
+            /*
+            原本寫法
+            $("#email").bind("input propertychange", function(){
+                console.log($(this).val().length);
+                if($(this).val().length>0 && $(this).val().length<20){
+                    //符合規定
+                    $(this).removeClass('is-invalid');
+                    $(this).addClass('is-valid');
+                    flag_email = true;
+                }else{
+                    //不符合規定
+                    $(this).removeClass('is-valid');
+                    $(this).addClass('is-invalid');
+                    flag_email = false;
+                }
+            });
+            */
+
+            //註冊按鈕監聽 #reg_btn
+            $("#reg_btn").click(function () {
+                // console.log("test");             
+                if (flag_username && flag_password && flag_re_password && flag_email && flag_chk01) {
+                    //{"Username":"XX", "Password":"XXX", "Email":"XXXXX"}
+                    var dataJSON = {};
+                    dataJSON["Username"] = $("#username").val();
+                    dataJSON["Password"] = $("#password").val();
+                    dataJSON["Email"] = $("#email").val();
+                    // 注意$("#username").val()為id的值;dataJSON["Username"]的值要跟資料庫相同
+                    console.log(JSON.stringify(dataJSON));
+
+                    //傳遞至後端執行註冊行為
+                    $.ajax({
+                        type: "POST",
+                        url: "member_Create_api.php",
+                        data: JSON.stringify(dataJSON),
+                        dataType: "json",
+                        success: showdata_register,
+                        error: function () {
+                            alert("error: member_Create_api.php");
+                        }
+                    });
+
+                } else {
+                    alert("欄位有誤請修正!");
+                }
+            });
+
+            //登入按鈕監聽 #login_btn
+            $("#login_btn").click(function () {
+                // console.log($("#login_username").val()+$("#login_password").val());
+                //{"Username":"XX", "Password":"XXX"}
+                var dataJSON = {};
+                dataJSON["Username"] = $("#login_username").val();
+                dataJSON["Password"] = $("#login_password").val();
+                console.log(JSON.stringify(dataJSON));
+
+                //傳遞至後端執行登入行為
+                $.ajax({
+                    type: "POST",
+                    url: "member_login_api.php",
+                    data: JSON.stringify(dataJSON),
+                    dataType: "json",
+                    success: showdata_login,
+                    error: function () {
+                        alert("error: member_login_api.php");
+                    }
+                });
+            });
+
+        });
+
+        function showdata_register(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+                location.href = "Dreamy_Toys.html"
+            } else {
+                alert(data.message);
+            }
+        }
+
+        function showdata_check_uni(data) {
+            console.log('check_uni');
+            console.log(data);
+            if (data.state) {
+                //帳號可註冊
+                $("#username").removeClass('is-invalid');
+                $("#username").addClass('is-valid');
+                flag_username = true;
+
+            } else {
+                //帳號已存在，不可註冊!
+                $("#username").removeClass('is-valid');
+                $("#username").addClass('is-invalid');
+                flag_username = false;
+
+            }
+        }
+
+        function showdata_login(data) {
+            console.log(data);
+            if (data.state) {
+                alert(data.message);
+                // console.log(data.data[0].UID01);
+                var uid01 = data.data[0].UID01;
+                setCookie("UID01", uid01, 7);
+                $("#loginModal").modal("hide");
+                $("#user_message").text(data.data[0].Username + "登入中!");
+
+                //隱藏登入註冊按鈕
+                $("#s02_login_btn").addClass("d-none");
+                $("#s02_reg_btn").addClass("d-none");
+
+                //顯示登出按鈕
+                $("#s02_logout_btn").removeClass("d-none");
+
+                //顯示會員專區(解除disabled)
+                $("#s02_member_btn01").removeClass("disabled");
+                $("#s02_member_btn02").removeClass("disabled");
+                $("#s02_member_btn03").removeClass("disabled");
+
+                //顯示s04
+                $("#s0").removeClass("d-none");
+            } else {
+                alert(data.message);
+            }
+        }
+
+        function showdata_CheckUID(data) {
+            console.log(data);
+            if (data.state) {
+                //驗證成功
+                $("#user_message").text(data.data[0].Username + "登入中!");
+                $("#s02_login_btn").addClass("d-none");
+                $("#s02_reg_btn").addClass("d-none");
+
+                //顯示登出按鈕
+                $("#s02_logout_btn").removeClass("d-none");
+
+                //顯示會員專區(解除disabled)
+                $("#s02_member_btn01").removeClass("disabled");
+                $("#s02_member_btn02").removeClass("disabled");
+                $("#s02_member_btn03").removeClass("disabled");
+
+                //顯示s04
+                $("#s0").removeClass("d-none");
+            }
+        }
+
+        //w3school_cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function showdata_img(data, target) {
+            console.log(data);
+            target.empty();
+            data.forEach(d => {
+                var strHTML = `<li class="bg-cover" style="flex: 1 0 100%; height:600px; background-image: url(${d.圖片路徑});"></li>`;
+                target.append(strHTML);
+            });
+        }
+        /*
+          flex:1(flex-grow) 0(flex-shrink) 50%(flex-basis)
+          
+          flex-grow:當有多餘空間時，剩餘空間依設定值比例分配
+          flex-shirnk:空間小於內容物大小時，內容物依設定值壓縮
+          flex-basis:初始大小
+                  
+        */
+
+    </script>
+</body>
+
+</html>
